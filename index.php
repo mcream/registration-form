@@ -10,10 +10,13 @@
     display: block;
     float: left;
   }
+  input[type='submit']{
+    width: 120px;
+  }
   </style>
   <body>
     <div class="container">
-      <form class="" action="index.html" method="post">
+      <form class="" action="register.php" method="post">
         Login: <input type="text" name="login" value="">
         Hasło: <input type="password" name="password" value="">
         re-Hasło: <input type="password" name="repassword" value="">

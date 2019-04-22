@@ -17,7 +17,7 @@
         Login: <input type="text" name="login" value="">
         Hasło: <input type="password" name="password" value="">
         re-Hasło: <input type="password" name="repassword" value="">
-        Regulamin: <input type="text" name="rules" value="">
+        Regulamin: <input type="checkbox" name="rules" value="">
         <input type="submit" name="" value="submit">
       </form>
     </div>

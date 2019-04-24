@@ -1,10 +1,10 @@
 <?php
 
-
-  $login = $_POST['login'];
-  $password = $_POST['password'];
-  $repassword = $_POST['repassword'];
-  $rules = $_POST['rules'];
+  $login = @filter_var($_POST['login'], FILTER_SANITIZE_STRING);
+  //Zapisywanie haseł do zmiennych
+  $password = @filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+  $repassword = @$_POST['repassword'];
+  $rules = @$_POST['rules'];
 
   // Weryfikacja
   $verify = false;
@@ -20,10 +20,6 @@
       $checkPwd = true;
   }
 
-  //Zapisywanie haseł do zmiennych
-  $password = $_POST['$password'];
-  $repassword = $_POST['$repassword'];
-
   //Sprawdzanie czy checkboxa. Następnie dodaje wartość 'true' dla rulesAccept
   if(isset($rules)){
     $rulesAccept = true;
@@ -35,7 +31,6 @@
   }else{
     echo "Przykro mi, ale najwyraźniej coś poszło nie tak";
   }
-
   //ref. do połączenia z bazą danych
   require_once "db.php";
   mysqli_report(MYSQLI_REPORT_STRICT);

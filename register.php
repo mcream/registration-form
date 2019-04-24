@@ -26,10 +26,10 @@
     $checkRules = true;
   }
   //Jeżeli wszystkie 'if'-y się wykonają, to zmienna verify otrzyma wartosc 'true'
-  if($checkLogin && $checkPwd && $checkRules){
+  if($checkLogin && $checkPwd && @$checkRules){
       $verify = true;
   }else{
-    echo "Przykro mi, ale najwyraźniej coś poszło nie tak";
+    echo "Przykro mi, ale najwyraźniej coś poszło nie tak <br /><a href='login.php'>Zaloguj</a><br /> <a href='index.php'>Rejestracja</a>";
   }
   //ref. do połączenia z bazą danych
   require_once "db.php";
